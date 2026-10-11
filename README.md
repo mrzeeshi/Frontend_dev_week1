@@ -2,7 +2,7 @@
 
 A responsive, accessible personal portfolio website built for the **MTech Solutions Frontend Development Internship (Batch 01 · Task 01)**.
 
-**Live site:** _add your Vercel / Netlify URL here_
+**Live site:** https://vercel.com/shadezee/portfolio/7rR8xpswtgoQEdQPpLvktsnWsKxq
 
 ## Features
 
