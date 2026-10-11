@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zeeshan Haider | Frontend Developer &amp; Cybersecurity Student</title>
+  <meta name="description" content="Portfolio of Zeeshan Haider, a frontend developer and cybersecurity student at COMSATS University Islamabad. Responsive, accessible and security-minded web interfaces." />
+  <meta name="theme-color" content="#070d14" />
+  <meta property="og:title" content="Zeeshan Haider | Frontend Developer" />
+  <meta property="og:description" content="Responsive, accessible and security-minded web interfaces." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    /* Set theme + js flag before first paint to avoid flashing */
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (!theme) {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Project status additions (Under Construction) */
+    .status-badge{position:absolute;top:.8rem;right:.8rem;z-index:2;display:inline-flex;align-items:center;gap:.45rem;padding:.3rem .7rem;font-size:.75rem;font-weight:700;letter-spacing:.02em;color:#1c1300;background:#fbbf24;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+    .status-badge__dot{width:7px;height:7px;border-radius:50%;background:#1c1300;animation:pulse-dot 1.6s ease-in-out infinite}
+    @keyframes pulse-dot{50%{opacity:.25}}
+    .project__note{display:flex;align-items:flex-start;gap:.55rem;margin:0;padding:.65rem .8rem;font-size:.88rem;color:var(--text);background:rgba(251,191,36,.12);border:1px dashed #d99a06;border-radius:10px}
+    .project__note .icon{color:#d99a06;margin-top:.15rem}
+  </style>
+</head>
+<body>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+      <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><line x1="8" y1="18" x2="12" y2="18"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo" aria-label="Zeeshan Haider, back to top">
+        <span class="logo__mark">ZH</span>
+        <span class="logo__text">Zeeshan<span class="accent">.</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__menu" id="navMenu">
+          <li><a class="nav__link" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#services">Services</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+          <li class="nav__cta-item"><a class="btn btn--primary btn--sm" href="#contact">Hire Me</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch theme">
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+          <svg class="icon icon--open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="badge"><span class="badge__dot" aria-hidden="true"></span> Open to internships &amp; freelance work</p>
+          <p class="hero__hello">Hi, I'm</p>
+          <h1 class="hero__title" id="hero-title">Zeeshan Haider</h1>
+          <p class="hero__role">Frontend Developer <span class="sep">/</span> Cybersecurity Student</p>
+          <p class="hero__intro">
+            I build <span class="typed-wrap"><span id="typed" class="typed">responsive websites</span><span class="caret" aria-hidden="true"></span></span>
+            with HTML, CSS and JavaScript, and I bring a security-first mindset to everything I ship.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">View My Work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--ghost" href="#contact">Contact Me</a>
+          </div>
+          <ul class="hero__social" aria-label="Social links">
+            <li><a class="social" href="https://github.com/mrzeeshi" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a class="social" href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a class="social" href="mailto:z.haider1504@gmail.com" aria-label="Send an email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card__bar">
+              <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+              <span class="code-card__file">developer.js</span>
+            </div>
+<pre class="code-card__body"><code><span class="c-k">const</span> <span class="c-v">developer</span> = {
+  <span class="c-p">name</span>: <span class="c-s">"Zeeshan Haider"</span>,
+  <span class="c-p">role</span>: <span class="c-s">"Frontend Developer"</span>,
+  <span class="c-p">stack</span>: [<span class="c-s">"HTML"</span>, <span class="c-s">"CSS"</span>, <span class="c-s">"JavaScript"</span>],
+  <span class="c-p">studying</span>: <span class="c-s">"Cybersecurity"</span>,
+  <span class="c-p">focus</span>: <span class="c-s">"secure &amp; responsive UI"</span>,
+  <span class="c-p">openToWork</span>: <span class="c-b">true</span>
+};</code></pre>
+          </div>
+          <div class="float-chip float-chip--a"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Security-minded</div>
+          <div class="float-chip float-chip--b"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Fully responsive</div>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Scroll to About section"><span></span></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">About Me</p>
+          <h2 class="section__title" id="about-title">Turning ideas into secure, polished interfaces</h2>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p>
+              I'm Zeeshan, a BS Cybersecurity student at COMSATS University Islamabad with a growing passion for frontend development.
+              I enjoy taking a design idea and turning it into a clean, fast and responsive website that works well on every screen.
+            </p>
+            <p>
+              My cybersecurity background shapes how I build: I think about input validation, safe forms and
+              what can go wrong before it does. My goal is to grow into a frontend developer who delivers interfaces that look great
+              <em>and</em> hold up under real-world use.
+            </p>
+            <ul class="facts">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Islamabad, Pakistan</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg><span>HTML · CSS · JavaScript</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>Cybersecurity focus</span></li>
+            </ul>
+            <a class="btn btn--ghost" href="https://github.com/mrzeeshi" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> See my GitHub
+            </a>
+          </div>
+
+          <div class="about__cards">
+            <article class="card info-card reveal">
+              <div class="info-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></div>
+              <div>
+                <h3>Education</h3>
+                <p class="info-card__title">BS Cybersecurity</p>
+                <p class="muted">COMSATS University Islamabad &middot; Currently studying</p>
+              </div>
+            </article>
+            <article class="card info-card reveal">
+              <div class="info-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>
+              <div>
+                <h3>Certifications</h3>
+                <ul class="plain-list">
+                  <li>Cisco Network Essentials</li>
+                  <li>WordPress</li>
+                  <li>HP Cyber Awareness</li>
+                </ul>
+              </div>
+            </article>
+            <article class="card info-card reveal">
+              <div class="info-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></div>
+              <div>
+                <h3>Career Focus</h3>
+                <p class="muted">Frontend development with a security-first mindset: accessible, performant and trustworthy web interfaces.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section--alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Skills</p>
+          <h2 class="section__title" id="skills-title">Tools &amp; technologies I work with</h2>
+          <p class="section__sub">A focused frontend toolkit, backed by programming and security fundamentals.</p>
+        </header>
+
+        <div class="skills__grid">
+          <article class="card skill reveal">
+            <div class="skill__top"><span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span><h3>HTML5</h3><span class="skill__level">Advanced</span></div>
+            <p class="muted">Semantic, accessible markup and clean document structure.</p>
+            <div class="bar" role="img" aria-label="HTML5 proficiency: 85 percent"><span style="--w:85%"></span></div>
+          </article>
+          <article class="card skill reveal">
+            <div class="skill__top"><span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg></span><h3>CSS3</h3><span class="skill__level">Advanced</span></div>
+            <p class="muted">Flexbox, Grid, custom properties, animations and theming.</p>
+            <div class="bar" role="img" aria-label="CSS3 proficiency: 80 percent"><span style="--w:80%"></span></div>
+          </article>
+          <article class="card skill reveal">
+            <div class="skill__top"><span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></span><h3>JavaScript</h3><span class="skill__level">Intermediate</span></div>
+            <p class="muted">ES6+, DOM manipulation, events and form validation.</p>
+            <div class="bar" role="img" aria-label="JavaScript proficiency: 70 percent"><span style="--w:70%"></span></div>
+          </article>
+          <article class="card skill reveal">
+            <div class="skill__top"><span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-branch"/></svg></span><h3>Git &amp; GitHub</h3><span class="skill__level">Intermediate</span></div>
+            <p class="muted">Version control, repositories, commits and collaboration.</p>
+            <div class="bar" role="img" aria-label="Git and GitHub proficiency: 70 percent"><span style="--w:70%"></span></div>
+          </article>
+          <article class="card skill reveal">
+            <div class="skill__top"><span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Responsive Design</h3><span class="skill__level">Advanced</span></div>
+            <p class="muted">Mobile-first layouts that adapt from phones to large desktops.</p>
+            <div class="bar" role="img" aria-label="Responsive design proficiency: 80 percent"><span style="--w:80%"></span></div>
+          </article>
+          <article class="card skill reveal">
+            <div class="skill__top"><span class="skill__icon"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></span><h3>React</h3><span class="skill__level skill__level--learning">Learning</span></div>
+            <p class="muted">Components, props and state, currently building up this skill.</p>
+            <div class="bar" role="img" aria-label="React proficiency: 35 percent, currently learning"><span style="--w:35%"></span></div>
+          </article>
+        </div>
+
+        <div class="tags-block reveal">
+          <h3 class="tags-block__title">Also in my toolbox</h3>
+          <ul class="tags">
+            <li>Python</li><li>C++</li><li>Java</li><li>Kali Linux</li><li>Nmap</li><li>Wireshark</li><li>Burp Suite</li><li>OWASP Top 10</li><li>VS Code</li><li>Chrome DevTools</li><li>WordPress</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Projects</p>
+          <h2 class="section__title" id="projects-title">Selected work from my GitHub</h2>
+          <p class="section__sub">Hands-on projects where I practised layout, logic and clean code.</p>
+        </header>
+
+        <div class="projects__grid">
+          <article class="card project reveal">
+            <div class="project__thumb project__thumb--a" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></div>
+            <div class="project__body">
+              <h3>File Guard</h3>
+              <p class="muted">A security-focused file protection project built alongside my cybersecurity studies, combining a practical tool with safe-by-default thinking.</p>
+              <ul class="tags tags--sm" aria-label="Technologies used"><li>Python</li><li>Cybersecurity</li></ul>
+              <div class="project__links">
+                <a class="btn btn--ghost btn--sm" href="https://github.com/mrzeeshi/File-Guard" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> View Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project__thumb project__thumb--b" aria-hidden="true"><svg class="icon"><use href="#i-calc"/></svg></div>
+            <div class="project__body">
+              <h3>Calculator</h3>
+              <p class="muted">A browser-based calculator with a clean button grid and instant results, built to practise DOM events and responsive layout.</p>
+              <ul class="tags tags--sm" aria-label="Technologies used"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="project__links">
+                <a class="btn btn--ghost btn--sm" href="https://github.com/mrzeeshi/Calculator" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> View Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project__thumb project__thumb--c" aria-hidden="true"><span class="status-badge"><span class="status-badge__dot" aria-hidden="true"></span>Under Construction</span><svg class="icon"><use href="#i-lock"/></svg></div>
+            <div class="project__body">
+              <h3>Online Bank (Flask)</h3>
+              <p class="muted">A web banking application built with Flask, covering user accounts and secure transaction flows. Core features are still being added.</p>
+              <p class="project__note"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg> This project is still under construction, so some features are incomplete.</p>
+              <ul class="tags tags--sm" aria-label="Technologies used"><li>Python</li><li>Flask</li><li>HTML</li><li>CSS</li></ul>
+              <div class="project__links">
+                <a class="btn btn--ghost btn--sm" href="https://github.com/mrzeeshi/Online-Bank-With-Flask-Server" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> View Progress</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project__thumb project__thumb--d" aria-hidden="true"><svg class="icon"><use href="#i-layout"/></svg></div>
+            <div class="project__body">
+              <h3>Portfolio</h3>
+              <p class="muted">This responsive personal portfolio, hand-coded with semantic HTML, modern CSS and vanilla JavaScript, including theming and form validation.</p>
+              <ul class="tags tags--sm" aria-label="Technologies used"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="project__links">
+                <a class="btn btn--ghost btn--sm" href="https://github.com/mrzeeshi/Portfolio" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> View Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="projects__more reveal">
+          More on GitHub &rarr;
+          <a href="https://github.com/mrzeeshi?tab=repositories" target="_blank" rel="noopener noreferrer">github.com/mrzeeshi</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section section--alt" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Services</p>
+          <h2 class="section__title" id="services-title">How I can help you</h2>
+          <p class="section__sub">Frontend services built around quality, clarity and security.</p>
+        </header>
+
+        <div class="services__grid">
+          <article class="card service reveal">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
+            <h3>Responsive Website Development</h3>
+            <p class="muted">Custom websites built with HTML, CSS and JavaScript that look right on mobile, tablet and desktop.</p>
+          </article>
+          <article class="card service reveal">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg></span>
+            <h3>Landing Pages &amp; Portfolios</h3>
+            <p class="muted">Clean, conversion-minded single pages and personal portfolios that present you or your brand professionally.</p>
+          </article>
+          <article class="card service reveal">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+            <h3>Design to Code</h3>
+            <p class="muted">Turning Figma files, mockups or screenshots into pixel-aware, well-structured frontend code.</p>
+          </article>
+          <article class="card service reveal">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg></span>
+            <h3>Fixes &amp; Responsive Cleanup</h3>
+            <p class="muted">Repairing broken layouts, cross-device issues and messy CSS so your existing site works properly again.</p>
+          </article>
+          <article class="card service reveal">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></span>
+            <h3>Performance &amp; Accessibility</h3>
+            <p class="muted">Lighter pages, readable contrast, keyboard-friendly navigation and sensible semantics for every visitor.</p>
+          </article>
+          <article class="card service reveal">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Secure Frontend Practices</h3>
+            <p class="muted">Input validation, safer forms and awareness of common web risks from the OWASP Top 10 baked into the build.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section__title" id="contact-title">Let's build something together</h2>
+          <p class="section__sub">Have a project, an internship opportunity or just a question? Send a message and I'll get back to you.</p>
+        </header>
+
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <ul class="contact__list">
+              <li>
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                <div>
+                  <p class="contact__label">Email</p>
+                  <a href="mailto:z.haider1504@gmail.com" id="emailLink">z.haider1504@gmail.com</a>
+                </div>
+                <button class="icon-btn icon-btn--sm" id="copyEmail" type="button" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+              </li>
+              <li>
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <div>
+                  <p class="contact__label">Location</p>
+                  <p>Islamabad, Pakistan</p>
+                </div>
+              </li>
+              <li>
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></span>
+                <div>
+                  <p class="contact__label">GitHub</p>
+                  <a href="https://github.com/mrzeeshi" target="_blank" rel="noopener noreferrer">github.com/mrzeeshi</a>
+                </div>
+              </li>
+              <li>
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></span>
+                <div>
+                  <p class="contact__label">LinkedIn</p>
+                  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <form class="card form reveal" id="contactForm" novalidate aria-label="Contact form">
+            <div class="form__row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required aria-describedby="name-error" />
+                <p class="field__error" id="name-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="email-error" />
+                <p class="field__error" id="email-error" role="alert"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?" required aria-describedby="subject-error" />
+              <p class="field__error" id="subject-error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" maxlength="1000" placeholder="Tell me a little about your project..." required aria-describedby="message-error message-count"></textarea>
+              <div class="field__meta">
+                <p class="field__error" id="message-error" role="alert"></p>
+                <p class="field__count" id="message-count" aria-live="off">0 / 1000</p>
+              </div>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit" id="submitBtn">
+              <span class="btn__label">Send Message</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
+            </button>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="logo"><span class="logo__mark">ZH</span><span class="logo__text">Zeeshan<span class="accent">.</span></span></a>
+        <p class="muted">Frontend developer and cybersecurity student building responsive, secure web experiences.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer__social">
+        <h3>Connect</h3>
+        <ul class="hero__social">
+          <li><a class="social" href="https://github.com/mrzeeshi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+          <li><a class="social" href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+          <li><a class="social" href="mailto:z.haider1504@gmail.com" aria-label="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year">2026</span> Zeeshan Haider. All rights reserved.</p>
+      <p class="muted">Built with HTML, CSS &amp; JavaScript</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
